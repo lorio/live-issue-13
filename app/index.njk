@@ -1,0 +1,24 @@
+{% extends "layouts/default.njk" %}
+{% block content %} 
+
+{% include "partials/header.njk" %}
+{% include "partials/nav.njk" %}
+      <div class="issue">
+        <div id="date">
+          <h3><a href="issue_12/index.html">Current Issue</a></h3>
+        </div>
+        <figure><a href="issue_12/">
+          <img src="images/hugoW.jpg" alt="chandelier in forest" width="704"></a><figcaption>Hugo Bastidas &ldquo;How Grand&rdquo; 2015 oil on linen 48 x 72 in.  Courtesy Nohra Haime Gallery</figcaption>
+        </figure>
+      
+        <section class="panel">
+          <a href="subscribe.html">
+            <figure> 
+              <img src="images/boy.gif" alt="jeff selfie" height="160" width="160" />
+            </figure>
+            <p>Spring has sprung. Get ready for LiVE MAG! 13! Subscribe now to get the current issue 12 via USPS.</p>
+          </a>
+        </section>
+      </div><!-- end issue -->
+{% include "partials/footer.njk" %}
+{% endblock %}

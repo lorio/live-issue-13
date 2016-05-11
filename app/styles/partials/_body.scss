@@ -4,7 +4,8 @@ $black : #1a1a1a;
 	color: $black;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
-#twelve {
+#twelve,
+#thirteen {
 	header {
 		/* background-color: lighten($accent-color, 5%); */
 		background-color: $accent-color;

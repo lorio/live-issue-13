@@ -11,7 +11,7 @@ const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
 gulp.task('views', () => {
-  return gulp.src('app/*.njk')
+  return gulp.src('app/**/*.njk')
   .pipe($.nunjucksRender({
       path: 'app'
     }))

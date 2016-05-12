@@ -10,14 +10,16 @@ import {stream as wiredep} from 'wiredep';
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
+var data = require('gulp-data');
 gulp.task('views', () => {
   return gulp.src('app/**/*.njk')
   .pipe(data(function() {
-      return require('./app/data.json')
+      return require('./app/data.json');
+    }))
   .pipe($.nunjucksRender({
       path: 'app'
     }))
-    .pipe(gulp.dest('.tmp'))
+    .pipe(gulp.dest('.tmp'));
 });
 
 gulp.task('styles', () => {

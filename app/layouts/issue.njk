@@ -2,9 +2,11 @@
 <html class="no-js" lang="EN">
   <head>
     <meta charset="utf-8">
-    <meta name="description" content="{% block art %}{% endblock %} by {% block artist %}{% endblock %} in LiVe MAG! Issue No.13.">
+    {% for artist in artists %}
+    <meta name="description" content="Selected"{{artist.art}}"by"{{artist.name}}"in LiVe MAG! Issue No.13.">
+    {% endfor %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Live Mag 13</title>
+    <title>Live Mag 13 | {{ artist.name }} </title>
     <link href='apple-touch-icon-144x144.png' rel='apple-touch-icon' sizes='144x144'>
     <link href='apple-touch-icon-72x72.png' rel='apple-touch-icon' sizes='72x72'>
     <link href='apple-touch-icon.png' rel='apple-touch-icon'>
@@ -36,7 +38,7 @@
       <div class="issue">
         <div id="date">
           <h3><a href="index.html">13</a></h3>
-          <h3>First Last</h3>
+          <h3>{{ artist.name }}</h3>
         </div>
         {% block content %}{% endblock %}      
       </div><!-- end issue -->

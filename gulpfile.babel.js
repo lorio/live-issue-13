@@ -12,6 +12,8 @@ const reload = browserSync.reload;
 
 gulp.task('views', () => {
   return gulp.src('app/**/*.njk')
+  .pipe(data(function() {
+      return require('./app/data.json')
   .pipe($.nunjucksRender({
       path: 'app'
     }))

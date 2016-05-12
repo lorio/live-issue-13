@@ -7,3 +7,13 @@
     "alt": "Image two alt text"
   }]
 }
+{
+  "artists": [{
+    "name": "Peter Bushyeager",
+    "art": "poetry"
+  }
+  {
+    "name": "Jean Wilkinson",
+    "art": "art"
+  }]
+}

@@ -1,10 +1,13 @@
 {
   "artists": [{
+    "doc": "http://localhost:9000/issue_13/peter-bushyeager.njk",
     "name": "Peter Bushyeager",
-    "art": "poetry"
+    "art": "poetry",
+    "file": "peter-bushyeager"
   },
   {
     "name": "Jean Wilkinson",
     "art": "art"
   }]
 }
+

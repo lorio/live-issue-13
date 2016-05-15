@@ -220,7 +220,10 @@ figcaption a:active {
     padding-bottom: 30px;
   }
 }
-
+.bio {
+  cite {font-style: italic;}
+  padding-top: 2em;
+}
 h1,h2.title {
     font-family: Courier, "Lucida Sans Typewriter", "Lucida Typewriter", "Courier New", "American Typewriter";
     padding-top: 0;

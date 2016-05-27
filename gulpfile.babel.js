@@ -10,20 +10,19 @@ import {stream as wiredep} from 'wiredep';
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
-var data = require('gulp-data');
+//var data = require('gulp-data');
 gulp.task('views', () => {
   return gulp.src('app/**/*.njk')
-  .pipe(data(function() {
-      return require('./app/data.json');
-    }))
-  .pipe($.nunjucksRender({
+//  .pipe(data(function() {
+//      return require('./app/data.json');
+      .pipe($.nunjucksRender({
       path: 'app'
     }))
     .pipe(gulp.dest('.tmp'));
 });
 
 gulp.task('styles', () => {
-  return gulp.src('app/styles/*.scss')
+  return gulp.src('app/styles/**/*.scss')
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
     .pipe($.sass.sync({
@@ -66,8 +65,8 @@ gulp.task('lint', lint('app/scripts/**/*.js'));
 gulp.task('lint:test', lint('test/spec/**/*.js', testLintOptions));
 
 gulp.task('html', ['views', 'styles', 'scripts'], () => {
-  return gulp.src(['app/*.html', '.tmp/*.html'])
-    .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
+  return gulp.src(['app/**/*.html', '.tmp/**/*.html', '.tmp/issue_13/*.html'])
+    .pipe($.useref({searchPath: ['.tmp', 'app', '**/issue_13', '.']}))
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.cssnano()))
     .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
@@ -187,15 +186,6 @@ gulp.task('wiredep', () => {
       }
     }))
     .pipe(gulp.dest('app/layouts'));
-});
-
-gulp.task('fixpaths', ['html'], function () {
-  return gulp.src('dist/*/**.html')
-    .pipe($.plumber())
-    .pipe($.replace('styles/main', 'stylesheets/styles'))
-    .pipe($.replace('scripts/main', 'javascripts/all'))
-//    .pipe($.replace('favicon', '../favicon'))
-    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {

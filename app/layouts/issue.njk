@@ -2,25 +2,12 @@
 <html class="no-js" lang="EN">
   <head>
     <meta charset="utf-8">
-    {#% for artist in artists %}
-      {% if artist = window.location.pathname %#}
-    <meta name="description" content="Art by [Name] in LiVe MAG! Issue No.13.">
-    {#% endfor %#}
+    <meta name="description" content="Art by artistsname in LiVe MAG! Issue No.13.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% block title %}  
-    {#% for artist in artists %#}
-      {% if "artist.doc" == pathname %}
-        <title>Live Mag 13 | {{artist.name}} </title>
-      {% else %}
-        {% include "partials/title.njk" %}
-      {% endif %}
-    {#% endfor %#}
-  {% endblock title %}
-    
-    <link href='apple-touch-icon-144x144.png' rel='apple-touch-icon' sizes='144x144'>
-    <link href='apple-touch-icon-72x72.png' rel='apple-touch-icon' sizes='72x72'>
-    <link href='apple-touch-icon.png' rel='apple-touch-icon'>
-    <link href='favicon.ico' rel='icon' type='image/ico'>    
+    <link href='../apple-touch-icon-144x144.png' rel='apple-touch-icon' sizes='144x144'>
+    <link href='../apple-touch-icon-72x72.png' rel='apple-touch-icon' sizes='72x72'>
+    <link href='../apple-touch-icon.png' rel='apple-touch-icon'>
+    <link href='../favicon.ico' rel='icon' type='image/ico'>    
     <!-- Place favicon.ico in the root directory -->
 
     <!-- build:css styles/vendor.css -->
@@ -28,10 +15,10 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- build:css styles/main.css -->
+    <!-- build:css ../styles/main.css -->
     <link rel="stylesheet" href="../styles/main.css">
     <!-- endbuild -->
-    
+    {% block style %}{% endblock %}
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="..//bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
@@ -48,7 +35,7 @@
       <div class="issue">
         <div id="date">
           <h3><a href="index.html">13</a></h3>
-          <h3>[Name]</h3>
+          <h3>artistsname</h3>
         </div>
         {% block content %}{% endblock %}      
       </div><!-- end issue -->

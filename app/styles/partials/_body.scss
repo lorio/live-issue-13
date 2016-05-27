@@ -30,6 +30,7 @@ $black : #1a1a1a;
 			&:hover {color: darken($accent-color, 10%);}	
 		}
 		h3 { color: darken($accent-color, 10%); }
+		ul > li {display: inline-block; whitespace:normal;}
 	}	 
 
 	#footer-nav {
@@ -48,6 +49,9 @@ $black : #1a1a1a;
 		@include blacktype;
 	}
 	.poem h3 {@include blacktype;}
+	.prose p,
+	.poem p {line-height: 1.4em;}
+
 }
 
 
